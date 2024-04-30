@@ -45,6 +45,8 @@ def signal_handler(sig, frame):
 @click.pass_context
 @cli_helper.process_standard_options
 def {{cookiecutter.extension_command_name}}(ctx):
+    """{{cookiecutter.short_description}}"""
+
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGTERM, signal_handler)
 
