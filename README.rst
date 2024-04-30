@@ -45,14 +45,14 @@ cookiecutter-aprsd-python
    <p align="center"><img alt="logo" src="docs/_static/logo.png" width="50%" /></p>
 
 
-Cookiecutter_ template for a Python package for APRSD daemon plugins.
+Cookiecutter_ template for a Python package for APRSD daemon extension.
 
 Usage
 =====
 
 .. code:: console
 
-   $ cookiecutter gh:hemna/cookiecutter-aprsd-plugin
+   $ cookiecutter gh:hemna/cookiecutter-aprsd-extension
 
 
 Features

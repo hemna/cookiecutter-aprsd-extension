@@ -88,7 +88,7 @@ please `file an issue`_ along with a detailed description.
 Credits
 -------
 
-This project was generated from `@hemna`_'s `APRSD Plugin Python Cookiecutter`_ template.
+This project was generated from `@hemna`_'s `APRSD Extension Python Cookiecutter`_ template.
 
 .. _@hemna: https://github.com/hemna
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
