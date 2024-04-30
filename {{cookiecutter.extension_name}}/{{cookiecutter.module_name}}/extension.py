@@ -1,0 +1,1 @@
+from {{cookiecutter.module_name}}.cmds import {{cookiecutter.extension_command_name}}  # noqa: F401

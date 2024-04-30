@@ -1,0 +1,31 @@
+{
+    "full_name": "Your name here",
+    "email": "foo@bar.com",
+    "github_username": "foobar",
+    "friendly_name": "APRSD Foobar Extension",
+    "extension_name": "aprsd-foobar-extension",
+    "extension_short_name": "foobar",
+    "module_name": "{{ cookiecutter.extension_name|lower|replace('-', '_') }}",
+    "short_description": "Ham radio APRSD extension that does....",
+    "version": "v0.1.0",
+    "license": [
+        "MIT",
+        "BSD-3",
+        "GNU GPL v3.0",
+        "Apache Software License 2.0",
+        "Mozilla Public License 2.0"
+    ],
+    "extension_command_name": "mine",
+    "__prompts__": {
+        "full_name": "Your full name",
+        "email": "Your email address",
+        "github_username": "Your GitHub username",
+        "friendly_name": "A human readable name for the project.",
+        "extension_name": "The python name of the extension",
+        "extension_short_name": "A Short name for the extension. One word, no spaces, no special characters",
+        "short_description": "A short description of the extension",
+        "version": "The initial version of the extension",
+        "license": "The license for the extension",
+        "extension_command_name": "The name of the new command."
+    }
+}
