@@ -52,7 +52,7 @@ Usage
 
 .. code:: console
 
-   $ cookiecutter gh:hemna/cookiecutter-aprsd-extension
+   cookiecutter gh:hemna/cookiecutter-aprsd-extension
 
 
 Features
