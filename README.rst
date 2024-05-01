@@ -40,10 +40,6 @@ cookiecutter-aprsd-python
 
 |
 
-.. raw:: html
-
-   <p align="center"><img alt="logo" src="docs/_static/logo.png" width="50%" /></p>
-
 
 Cookiecutter_ template for a Python package for APRSD daemon extension.
 
@@ -58,7 +54,8 @@ Usage
 Example
 =======
 .. raw:: html
-<a href="https://asciinema.org/a/XrXQFXzhvDaknZOqEseiylnqy" target="_blank"><img src="https://asciinema.org/a/XrXQFXzhvDaknZOqEseiylnqy.svg" /></a>
+
+   <a href="https://asciinema.org/a/XrXQFXzhvDaknZOqEseiylnqy" target="_blank"><img src="https://asciinema.org/a/XrXQFXzhvDaknZOqEseiylnqy.svg" /></a>
 
 
 Features
