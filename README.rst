@@ -55,6 +55,12 @@ Usage
    cookiecutter gh:hemna/cookiecutter-aprsd-extension
 
 
+Example
+=======
+.. raw:: html
+<a href="https://asciinema.org/a/XrXQFXzhvDaknZOqEseiylnqy" target="_blank"><img src="https://asciinema.org/a/XrXQFXzhvDaknZOqEseiylnqy.svg" /></a>
+
+
 Features
 ========
 
