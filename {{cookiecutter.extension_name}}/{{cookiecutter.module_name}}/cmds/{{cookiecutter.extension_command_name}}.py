@@ -10,6 +10,7 @@ import aprsd
 from aprsd import cli_helper
 from aprsd import threads as aprsd_threads
 from aprsd import packets, client
+from aprsd.client import client_factory
 from aprsd.threads import stats as stats_thread
 from aprsd.threads import keepalive
 
@@ -50,32 +51,38 @@ def {{cookiecutter.extension_command_name}}(ctx):
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGTERM, signal_handler)
 
+    LOG.info(f"APRSD version: {aprsd.__version__}")
     level, msg = utils._check_version()
     if level:
         LOG.warning(msg)
     else:
         LOG.info(msg)
     version = {{cookiecutter.module_name}}.__version__
-    LOG.info(f"APRSD IRC Started version: {version}")
-    LOG.info(f"APRSD version: {aprsd.__version__}")
-
-    # If you need an aprs client, you can get it here
-
-    # Initialize the client factory and create
-    # The correct client object ready for use
-    client.ClientFactory.setup()
+    LOG.info(f"APRSD {{cookiecutter.extension_group_name}} {{cookiecutter.extension_command_name}} started version: {version}")
 
     # Dump all the config options now.
     CONF.log_opt_values(LOG, logging.DEBUG)
 
     # Make sure we have 1 client transport enabled
-    if not client.factory.is_client_enabled():
+    if not client_factory.is_client_enabled():
         LOG.error("No Clients are enabled in config.")
         sys.exit(-1)
 
-    if not client.factory.is_client_configured():
+    if not client_factory.is_client_configured():
         LOG.error("APRS client is not properly configured in config file.")
         sys.exit(-1)
+
+    # Creates the client object
+    LOG.info("Creating client connection")
+    aprs_client = client_factory.create()
+    LOG.info(aprs_client)
+    if not aprs_client.login_success:
+        # We failed to login, will just quit!
+        msg = f"Login Failure: {aprs_client.login_failure}"
+        LOG.error(msg)
+        print(msg)
+        sys.exit(-1) 
+    
 
     # Try and load saved MsgTrack list
     LOG.debug("Loading saved objects.")
@@ -88,8 +95,8 @@ def {{cookiecutter.extension_command_name}}(ctx):
     stats_store_thread = stats_thread.APRSDStatsStoreThread()
     stats_store_thread.start()
 
-    keepalive = keep_alive.KeepAliveThread()
-    keepalive.start()
+    keepalive_thread = keepalive.KeepAliveThread()
+    keepalive_thread.start()
 
     LOG.info("Started the {{cookiecutter.extension_command_name}} command.")
 
@@ -102,4 +109,4 @@ def {{cookiecutter.extension_command_name}}(ctx):
     # Now wait for keepalive to be done.
     # CTRL-C will stop all the started threads automatically.
     stats_store_thread.join()
-    keepalive.join()
+    keepalive_thread.join()
