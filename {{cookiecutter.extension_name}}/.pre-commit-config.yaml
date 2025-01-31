@@ -13,12 +13,12 @@ repos:
     - id: check-illegal-windows-names
 
 - repo: https://github.com/asottile/setup-cfg-fmt
-  rev: v2.5.0
+  rev: v2.7.0
   hooks:
     - id: setup-cfg-fmt
 
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.8.4
+  rev: v0.9.0
   hooks:
     - id: ruff
     ###### Relevant part below ######
@@ -26,3 +26,16 @@ repos:
       args: ["check", "--select", "I", "--fix"]
     ###### Relevant part above ######
     - id: ruff-format
+
+- repo: https://github.com/astral-sh/uv-pre-commit
+  # uv version.
+  rev: 0.5.16
+  hooks:
+    # Compile requirements
+    - id: pip-compile
+      name: pip-compile requirements.in
+      args: [--resolver, backtracking, --annotation-style=line, requirements.in, -o, requirements.txt]
+    - id: pip-compile
+      name: pip-compile requirements-dev.in
+      args: [--resolver, backtracking, --annotation-style=line, requirements-dev.in, -o, requirements-dev.txt]
+      files: ^requirements-dev\.(in|txt)$
