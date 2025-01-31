@@ -12,7 +12,7 @@ def _check_version():
             # Looks like there is an updated version.
             return 1, result
         else:
-            return 0, "APRSD {{cookiecutter.extension_short_name }} extension is up to date"
+            return 0, "APRSD {{cookiecutter.extension_group_name }} extension is up to date"
     except Exception:
         # probably can't get in touch with pypi for some reason
         # Lets put up an error and move on.  We might not

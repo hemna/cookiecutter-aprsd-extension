@@ -11,7 +11,7 @@ from aprsd import cli_helper
 from aprsd import threads as aprsd_threads
 from aprsd import packets, client
 from aprsd.threads import stats as stats_thread
-from aprsd.threads import keep_alive
+from aprsd.threads import keepalive
 
 import {{cookiecutter.module_name}}
 # Import the extension's configuration options
@@ -40,7 +40,7 @@ def signal_handler(sig, frame):
         packets.SeenList().save()
 
 
-@cmds.{{cookiecutter.extension_short_name}}.command()
+@cmds.{{cookiecutter.extension_group_name}}.command()
 @cli_helper.add_options(cli_helper.common_options)
 @click.pass_context
 @cli_helper.process_standard_options

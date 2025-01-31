@@ -1,5 +1,8 @@
-{%- macro heading(text) -%} {{text}} {% for \_ in text %}={% endfor %}
-{%- endmacro -%} {{ heading(cookiecutter.friendly_name) }}
+{%- macro heading(text) -%} 
+{{text}} 
+{% for _ in text %}={% endfor %}
+{%- endmacro -%}
+ {{ heading(cookiecutter.friendly_name) }}
 
 [![PyPI](https://img.shields.io/pypi/v/{{cookiecutter.extension_name}}.svg)](https://pypi.org/project/{{cookiecutter.extension_name}}/)
 [![Status](https://img.shields.io/pypi/status/{{cookiecutter.extension_name}}.svg)](https://pypi.org/project/{{cookiecutter.extension_name}}/)
@@ -39,8 +42,7 @@ $ pip install {{cookiecutter.extension_name}}
 
 # Usage
 
-Please see the [Command-line
-Reference](https://{{cookiecutter.extension_name}}.readthedocs.io/en/latest/usage.html)
+Please see the [Command-line Reference](https://{{cookiecutter.extension_name}}.readthedocs.io/en/latest/usage.html)
 for details.
 
 # Contributing
@@ -51,17 +53,14 @@ Guide](CONTRIBUTING.rst).
 # License
 
 Distributed under the terms of the
-[{{cookiecutter.license.replace(\"-\", \" \")}}
-license](https://opensource.org/licenses/{{cookiecutter.license}}),
-*{{cookiecutter.friendly_name}}* is free and open source software.
+[{{cookiecutter.license.replace("-", " ")}} license](https://opensource.org/licenses/{{cookiecutter.license}}), *{{cookiecutter.friendly_name}}* is free and open source software.
 
 # Issues
 
-If you encounter any problems, please [file an
-issue](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.extension_name}}/issues)
+If you encounter any problems, please [file an issue](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.extension_name}}/issues)
 along with a detailed description.
 
 # Credits
 
-This project was generated from [\@hemna](https://github.com/hemna)\'s
+This project was generated from [@hemna](https://github.com/hemna)\'s
 [APRSD Extension Python Cookiecutter]() template.

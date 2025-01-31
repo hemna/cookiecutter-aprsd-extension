@@ -3,7 +3,7 @@ from oslo_config import cfg
 
 extension_group = cfg.OptGroup(
     name="{{cookiecutter.module_name}}",
-    title="APRSD {{cookiecutter.extension_short_name}} extension settings",
+    title="APRSD {{cookiecutter.extension_group_name}} extension settings",
 )
 
 extension_opts = [
